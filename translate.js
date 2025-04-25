@@ -2,55 +2,119 @@ let textInput = document.querySelector("textInput");
 
 //main func
 function typeName(){
-    currentName = "";
-    nameLetters = "";
-    nameLetterPS = "";
-    updateNameLetters();
-    // get translation func getTranslate()
-    // draw images
+    clearName() //Clear all letters in finger spelling images
+    updateNameLetters(); //Split current input into array of letters
+    getTranslate() // get translation finger spelling image to match
+    drawFSimages(); // draw images
+
+    //tester of current values
+    console.log(nameLetters); // Output: ["H", "e", "l", "l", "o"]
 };
 
 textInput.addEventListener("input", typeName);
-
 let currentName = InputEvent.data;
 
+
 // functions called in typeName() ============================================||
+
 // Makes the string into an array of letters
 function updateNameLetters(){
-    const nameLetters = currentName.split("");
-}
+    const nameLetters = currentName.split(""); 
+};
 
-//tester of current values
-console.log(nameLetters); // Output: ["H", "e", "l", "l", "o"]
+let nameLetterPS = [""];
 
-let nameLetterPS = 
+function getTranslate(){
+
+    nameLetterPS = [""];
+};
+
+function drawFSimages(){
+    return;
+};
+
 
 // functions called in saveEnter() ============================================||
 onkeyup = (Enter) => {};
-
+let submitButton = document.querySelector(".submit");
 
 function saveEnter(){
     console.log(currentName);
+    if (input){//input is of text
+        //Current input text
+        //Current fingerspelling images
+        //Add current to array
+        //Display saved word below
+        return
+    }
+    else {
+        console.log("Current name needs to be text, cannot be saved")
+        //(display message saying to type first?) modal. Display block, pass time then display none
+        return
+    }
 }
 
 addEventListener("keyup", (Enter) => {});
+submitButton.addEventListener("click", saveEnter);
 
 
 
 // functions called in clearName() ============================================||
 
-
-
+let clearButton = document.querySelector(".clear");
 
 function clearName(){
+    foreach 
+    //Clear current text input
+	//Clear current fingerspelling images
 
 }
 
 addEventListener("keyup", (Delete) );
-addEventListener(document.querySelector("clear"));
+clearButton.addEventListener("click", clearName);
 
 // Qould need delete, backspace (mobile), and button
 
+// Switch left and right () ============================================||
+let isRight = true;
+let buttonR = document.querySelector(".buttonR");
+let buttonL = document.querySelector(".buttonL");
+
+function switchToRIGHTHand(){
+    if (isRight){
+        isRight = false; //Switches state
+        buttonR.style.backgroundColor ='#85d067'; //Left button gets darker (css)
+        buttonR.style.filter ='drop-shadow(0px 0px 0px #075313)';
+        buttonR.style.marginLeft = '10px, 11px, 0px, 9px';
+        
+        //Switch to left button array 
+        //Switch current displayed fingerspelling images to left
+    }
+    else {
+        console.log("Already set to right hand")
+    }
+}
+
+function switchToLEFTHand(){
+    if (!isRight){
+        isRight = false; //Switches state
+        buttonL.style.backgroundColor ='#85d067'; //Left button gets darker (css)
+        buttonL.style.filter ='drop-shadow(0px 0px 0px #075313)';
+        buttonL.style.marginLeft = '10px, 11px, 0px, 9px';
+        
+        //Switch to left button array 
+        //Switch current displayed fingerspelling images to left
+    }
+    else {
+        console.log("Already set to left hand")
+    }
+}
+
+buttonR.addEventListener("click", switchToRIGHTHand);
+buttonL.addEventListener("click", switchToLEFTHand);
+
+
+// Storing correct translate files () ============================================||
 
 let rightHandLetters = {
     "a" : "images/right_a.jpg",
