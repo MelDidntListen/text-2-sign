@@ -103,9 +103,12 @@ let buttonL = document.querySelector(".buttonL");
 function switchToRIGHTHand(){
     if (isRight){
         isRight = false; //Switches state
+        console.log("Switched to RIGHT hand")
         buttonR.style.backgroundColor ='#85d067'; //Left button gets darker (css)
-        buttonR.style.filter ='drop-shadow(0px 0px 0px #075313)';
+        buttonR.style.filter ='drop-shadow(0px 0px 0px)';
         buttonR.style.marginLeft = '10px, 11px, 0px, 9px';
+        buttonL.style.backgroundColor = '#8ADB6B';
+        buttonL.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
         
         //Switch to left button array 
         //Switch current displayed fingerspelling images to left
@@ -117,10 +120,13 @@ function switchToRIGHTHand(){
 
 function switchToLEFTHand(){
     if (!isRight){
-        isRight = false; //Switches state
+        isRight = true; //Switches state
+        console.log("Switched to LEFT hand")
         buttonL.style.backgroundColor ='#85d067'; //Left button gets darker (css)
-        buttonL.style.filter ='drop-shadow(0px 0px 0px #075313)';
+        buttonL.style.filter ='drop-shadow(0px 0px 0px)';
         buttonL.style.marginLeft = '10px, 11px, 0px, 9px';
+        buttonR.style.backgroundColor = '#74C1DC';
+        buttonR.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
         
         //Switch to left button array 
         //Switch current displayed fingerspelling images to left
