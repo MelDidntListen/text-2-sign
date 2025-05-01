@@ -5,23 +5,21 @@
 
 
 // global variables ======================================================== ||
-let textInput = document.querySelector("#textInput");
+let textInput = document.querySelector(".typingArea");
 //let currentName = InputEvent.data; // doesnt work as needed
-let currentName = textInput.value;
+//let currentName = textInput.value; // no longer needed with new event system
 let nameLetters; 
 let nameArray = [];
 
 // main func ================================================================ ||
 function typeName(){
-    // clearName() //Clear all letters in finger spelling images
-    currentName = textInput.value;
-    updateNameLetters(); //Split current input into array of letters
-    // getTranslate() // get translation finger spelling image to match
-    // drawFSimages(); // draw images
+    const joinedName = nameArray.join;
+    textInput.innerHTML = joinedName;
+    getTranslate() // get translation finger spelling image to match //TODO
+    drawFSimages(); // draw images //TODO
     
-
     //tester of current values
-    console.log(currentName); // Output: ["H", "e", "l", "l", "o"]
+    console.log(nameArray); // Output: ["H", "e", "l", "l", "o"]
 };
 //function is called by window.onkeyup down below
 
@@ -31,28 +29,16 @@ function typeName(){
 // textInput.addEventListener("change", typeName);
 
 
-
-
 // functions called in typeName() ============================================||
 
-// Makes the string into an array of letters
-
-
-function updateNameLetters(){
-    nameLetters = currentName.split(""); 
-    
+function getTranslate(){ //TODO
+    return
+    // nameLetterPS = [""];
 };
 
-// let nameLetterPS = [""];
-
-// function getTranslate(){
-
-//     nameLetterPS = [""];
-// };
-
-// function drawFSimages(){
-//     return;
-// };
+function drawFSimages(){ //TODO
+    return;
+};
 
 
 // functions called in saveEnter() ============================================||
@@ -105,13 +91,13 @@ function switchToRIGHTHand(){
     if (isRight){
         isRight = false; //Switches state
         console.log("Switched to RIGHT hand")
-        buttonR.style.backgroundColor ='#85d067'; //Left button gets darker (css)
+        buttonR.style.backgroundColor ='#74C1DC'; //Left button gets darker (css)
         buttonR.style.filter ='drop-shadow(0px 0px 0px)';
         buttonR.style.marginLeft = '10px, 11px, 0px, 9px';
         buttonL.style.backgroundColor = '#8ADB6B';
         buttonL.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
         
-        //Switch to left button array 
+        //Switch to left button array // not needed, we'll just check the bool when drawing
         //Switch current displayed fingerspelling images to left
     }
     else {
@@ -127,9 +113,10 @@ function switchToLEFTHand(){
         buttonL.style.filter ='drop-shadow(0px 0px 0px)';
         buttonL.style.marginLeft = '10px, 11px, 0px, 9px';
         buttonR.style.backgroundColor = '#74C1DC';
-        buttonR.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
+        buttonR.style.backgroundColor.hover = '#74C1DC';
+        buttonR.style.filter = 'drop-shadow(-1px 2px 0px  #075313)';
         
-        //Switch to left button array 
+        //Switch to left button array // not needed, we'll just check the bool when drawing
         //Switch current displayed fingerspelling images to left
     }
     else {
@@ -139,7 +126,6 @@ function switchToLEFTHand(){
 
 buttonR.addEventListener("click", switchToRIGHTHand);
 buttonL.addEventListener("click", switchToLEFTHand);
-
 
 
 
