@@ -5,7 +5,7 @@
 
 
 // global variables ======================================================== ||
-let textInput = document.querySelector("#textInput");
+let textInput = document.querySelector(".typingArea");
 //let currentName = InputEvent.data; // doesnt work as needed
 //let currentName = textInput.value; // no longer needed with new event system
 let nameLetters; 
@@ -14,13 +14,12 @@ let nameArray = [];
 // main func ================================================================ ||
 function typeName(){
     const joinedName = nameArray.join;
-    document.getElementById("myElement").innerHTML = nameArray;
-    // getTranslate() // get translation finger spelling image to match
-    // drawFSimages(); // draw images
+    textInput.innerHTML = joinedName;
+    getTranslate() // get translation finger spelling image to match //TODO
+    drawFSimages(); // draw images //TODO
     
-
     //tester of current values
-    console.log(currentName); // Output: ["H", "e", "l", "l", "o"]
+    console.log(nameArray); // Output: ["H", "e", "l", "l", "o"]
 };
 //function is called by window.onkeyup down below
 
@@ -32,16 +31,14 @@ function typeName(){
 
 // functions called in typeName() ============================================||
 
-// let nameLetterPS = [""];
+function getTranslate(){ //TODO
+    return
+    // nameLetterPS = [""];
+};
 
-// function getTranslate(){
-
-//     nameLetterPS = [""];
-// };
-
-// function drawFSimages(){
-//     return;
-// };
+function drawFSimages(){ //TODO
+    return;
+};
 
 
 // functions called in saveEnter() ============================================||
@@ -100,7 +97,7 @@ function switchToRIGHTHand(){
         buttonL.style.backgroundColor = '#8ADB6B';
         buttonL.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
         
-        //Switch to left button array 
+        //Switch to left button array // not needed, we'll just check the bool when drawing
         //Switch current displayed fingerspelling images to left
     }
     else {
@@ -119,7 +116,7 @@ function switchToLEFTHand(){
         buttonR.style.backgroundColor.hover = '#74C1DC';
         buttonR.style.filter = 'drop-shadow(-1px 2px 0px  #075313)';
         
-        //Switch to left button array 
+        //Switch to left button array // not needed, we'll just check the bool when drawing
         //Switch current displayed fingerspelling images to left
     }
     else {
