@@ -7,15 +7,14 @@
 // global variables ======================================================== ||
 let textInput = document.querySelector("#textInput");
 //let currentName = InputEvent.data; // doesnt work as needed
-let currentName = textInput.value;
+//let currentName = textInput.value; // no longer needed with new event system
 let nameLetters; 
 let nameArray = [];
 
 // main func ================================================================ ||
 function typeName(){
-    // clearName() //Clear all letters in finger spelling images
-    currentName = textInput.value;
-    updateNameLetters(); //Split current input into array of letters
+    const joinedName = nameArray.join;
+    document.getElementById("myElement").innerHTML = nameArray;
     // getTranslate() // get translation finger spelling image to match
     // drawFSimages(); // draw images
     
@@ -31,17 +30,7 @@ function typeName(){
 // textInput.addEventListener("change", typeName);
 
 
-
-
 // functions called in typeName() ============================================||
-
-// Makes the string into an array of letters
-
-
-function updateNameLetters(){
-    nameLetters = currentName.split(""); 
-    
-};
 
 // let nameLetterPS = [""];
 
@@ -105,7 +94,7 @@ function switchToRIGHTHand(){
     if (isRight){
         isRight = false; //Switches state
         console.log("Switched to RIGHT hand")
-        buttonR.style.backgroundColor ='#85d067'; //Left button gets darker (css)
+        buttonR.style.backgroundColor ='#74C1DC'; //Left button gets darker (css)
         buttonR.style.filter ='drop-shadow(0px 0px 0px)';
         buttonR.style.marginLeft = '10px, 11px, 0px, 9px';
         buttonL.style.backgroundColor = '#8ADB6B';
@@ -127,7 +116,8 @@ function switchToLEFTHand(){
         buttonL.style.filter ='drop-shadow(0px 0px 0px)';
         buttonL.style.marginLeft = '10px, 11px, 0px, 9px';
         buttonR.style.backgroundColor = '#74C1DC';
-        buttonR.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
+        buttonR.style.backgroundColor.hover = '#74C1DC';
+        buttonR.style.filter = 'drop-shadow(-1px 2px 0px  #075313)';
         
         //Switch to left button array 
         //Switch current displayed fingerspelling images to left
@@ -139,7 +129,6 @@ function switchToLEFTHand(){
 
 buttonR.addEventListener("click", switchToRIGHTHand);
 buttonL.addEventListener("click", switchToLEFTHand);
-
 
 
 
