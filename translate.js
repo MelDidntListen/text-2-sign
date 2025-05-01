@@ -40,6 +40,7 @@ function typeName(){
 
 function updateNameLetters(){
     nameLetters = currentName.split(""); 
+    
 };
 
 // let nameLetterPS = [""];
