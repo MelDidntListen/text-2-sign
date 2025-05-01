@@ -8,15 +8,14 @@
 let textInput = document.querySelector(".typingArea");
 //let currentName = InputEvent.data; // doesnt work as needed
 //let currentName = textInput.value; // no longer needed with new event system
-let nameLetters; 
 let nameArray = [];
 
 // main func ================================================================ ||
 function typeName(){
-    const joinedName = nameArray.join;
-    textInput.innerHTML = joinedName;
-    getTranslate() // get translation finger spelling image to match //TODO
-    drawFSimages(); // draw images //TODO
+    let joinedName = nameArray.join("");
+    textInput.innerText = joinedName;
+    //getTranslate() // get translation finger spelling image to match //TODO
+    //drawFSimages(); // draw images //TODO
     
     //tester of current values
     console.log(nameArray); // Output: ["H", "e", "l", "l", "o"]
@@ -33,12 +32,22 @@ function typeName(){
 
 function getTranslate(){ //TODO
     return
+    //empty out all images in section
+    nameArray.forEach(matchLetter) // loop through name letters array, for each idex, finds matching letter, get image url
+    // make image tag with url  //lookup create image element
     // nameLetterPS = [""];
 };
 
 function drawFSimages(){ //TODO
     return;
 };
+
+function matchLetter(Letter){
+    // loop through name letters array, for each idex, 
+    // finds matching letter, 
+    // get image url
+    //draw
+}
 
 
 // functions called in saveEnter() ============================================||
@@ -139,88 +148,117 @@ window.onkeyup = function(event) {
     if ( key == 'A' ) {
         console.log("'A' key is pressed");
         nameArray.push('A');
+        typeName();
     } else if ( key == 'B' ) {
         console.log("'B' key is pressed");
         nameArray.push('B');
+        typeName();
     } else if ( key == 'C' ) {
         console.log("'C' key is pressed");
         nameArray.push('C');
+        typeName();
     } else if ( key == 'D' ) {
         console.log("'D' key is pressed");
         nameArray.push('D');
+        typeName();
     } else if ( key == 'E' ) {
         console.log("'E' key is pressed");
         nameArray.push('E');
+        typeName();
     } else if ( key == 'F' ) {
         console.log("'F' key is pressed");
         nameArray.push('F');
+        typeName();
     } else if ( key == 'G' ) {
         console.log("'G' key is pressed");
         nameArray.push('G');
+        typeName();
     } else if ( key == 'H' ) {
         console.log("'H' key is pressed");
         nameArray.push('H');
+        typeName();
     } else if ( key == 'I' ) {
         console.log("'I' key is pressed");
         nameArray.push('I');
+        typeName();
     } else if ( key == 'J' ) {
         console.log("'J' key is pressed");
         nameArray.push('J');
+        typeName();
     } else if ( key == 'K' ) {
         console.log("'K' key is pressed");
         nameArray.push('K');
+        typeName();
     } else if ( key == 'L' ) {
         console.log("'L' key is pressed");
         nameArray.push('L');
+        typeName();
     } else if ( key == 'M' ) {
         console.log("'M' key is pressed");
         nameArray.push('M');
+        typeName();
     } else if ( key == 'N' ) {
         console.log("'N' key is pressed");
         nameArray.push('N');
+        typeName();
     } else if ( key == 'O' ) {
         console.log("'O' key is pressed");
         nameArray.push('O');
+        typeName();
     } else if ( key == 'P' ) {
         console.log("'P' key is pressed");
         nameArray.push('P');
+        typeName();
     } else if ( key == 'Q' ) {
         console.log("'Q' key is pressed");
         nameArray.push('Q');
+        typeName();
     } else if ( key == 'R' ) {
         console.log("'R' key is pressed");
         nameArray.push('R');
+        typeName();
     } else if ( key == 'S' ) {
         console.log("'S' key is pressed");
         nameArray.push('S');
+        typeName();
     } else if ( key == 'T' ) {
         console.log("'T' key is pressed");
         nameArray.push('T');
+        typeName();
     } else if ( key == 'U' ) {
         console.log("'U' key is pressed");
         nameArray.push('U');
+        typeName();
     } else if ( key == 'V' ) {
         console.log("'V' key is pressed");
         nameArray.push('V');
+        typeName();
     } else if ( key == 'W' ) {
         console.log("'W' key is pressed");
         nameArray.push('W');
+        typeName();
     } else if ( key == 'X' ) {
         console.log("'X' key is pressed");
         nameArray.push('X');
+        typeName();
     } else if ( key == 'Y' ) {
         console.log("'Y' key is pressed");
         nameArray.push('Y');
+        typeName();
     } else if ( key == 'Z' ) {
         console.log("'Z' key is pressed");
         nameArray.push('Z');
+        typeName();
     } else if ( event.key === 'Delete' || event.inputType === "deleteContentBackward" || event.key === 'Backspace') {
         console.log("'Delete' key is pressed");
         nameArray.pop();
+        typeName();
     } else if ( event.key === 'Enter' ) {
         console.log("'Enter' key is pressed");
         console.log(nameArray);
+        saveEnter;
     } 
+    getTranslate();
 }
 
 // Storing correct translate files () ============================================||
