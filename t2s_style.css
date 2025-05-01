@@ -153,8 +153,9 @@ header
 .insertTextField{
     background-color: pink;
      height: 30px; 
-    width: 25%; 
+    width: 50%; 
     padding: 12px 20px;
+    margin-top: 50px;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
 }
@@ -178,6 +179,8 @@ button
 {
     width: 50px;
     margin-left:70px;
+    margin-right: 50px;
+    float: left; 
 }
 
 .LRTriggerButtons button:hover
@@ -208,8 +211,13 @@ button
 }
 .enterAndClear
 {
+    margin-top: 50px;
+    margin-left: 20px;
     width: 25%;
-float: left;
+}
+.clear{
+    float: ;
+
 }
 
 
