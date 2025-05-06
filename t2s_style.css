@@ -285,4 +285,29 @@ button
     width: 250px;
     height: 250px;
     margin-left:auto;
-    margin-ri
+    margin-right:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.giannap
+{
+    float:left;
+    margin-left: 10%;
+}
+
+.giannap p
+{
+    padding:15px;
+}
+
+.zionnab
+{
+    float:left;
+    margin-left: 10%;
+}
+
+.zionnab p
+{
+    padding:15px;
+}
