@@ -30,7 +30,7 @@ function typeName(){
 
 
 // functions called in typeName() ============================================||
-let imagez = document.querySelector(".row3");
+let imagez = document.querySelector(".imagez");
 
 
 function getTranslate(){ //TODO //if if left or right check
@@ -50,7 +50,7 @@ function matchLetter(Letter){
     let imageURL = leftHandLetters[Letter];
     var img = document.createElement('img');
     img.src = imageURL;
-    document.querySelector('.row3').appendChild(img);
+    document.querySelector('.imagez').appendChild(img);
     // loop through name letters array, for each idex, 
     // finds matching letter, 
     // get image url
