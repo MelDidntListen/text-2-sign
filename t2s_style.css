@@ -56,6 +56,7 @@ h3
     font-style: normal;
     color: #46A4C4;
     line-height: normal;
+    font-size: large;
 }
 
 p
@@ -65,6 +66,7 @@ p
     font-style: normal;
     color: #46A4C4;
     line-height: normal;
+    font-size: 90px;
 }
 
 .banner img
@@ -115,6 +117,7 @@ header
         margin-top: 70px;
         display:block;
          width: 100%;
+         clear: both;
     }
 }
 .row3
@@ -124,6 +127,7 @@ header
     margin-left:auto;
     margin-right:auto;
     width:50%;
+    clear: both;
 }
 
 .row3 h3
@@ -152,12 +156,13 @@ header
 }
 .insertTextField{
     background-color: rgb(237, 238, 232);
-     height: 30px; 
+     height: 100px; 
     width: 50%; 
     padding: 12px 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
+    border-radius: 8px
 }
 .typingArea{
     width: 50%;
@@ -216,14 +221,23 @@ button
     margin-top: 50px;
     margin-left: 20px;
     width: 25%;
+    float: left;
+}
+.submit{
     float:left;
-}
-/.clear{
-    float: ;
 
 }
+.clear{
+    float:left;
 
+}
+.imagez{
+    width: 100%;
 
+}
+.imagez img{
+    size-adjust: 15%;
+}
 /*----------ABOUT! ----------*/
 
 .aboutHead
