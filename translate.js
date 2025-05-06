@@ -9,6 +9,7 @@ let textInput = document.querySelector(".typingArea");
 //let currentName = InputEvent.data; // doesnt work as needed
 //let currentName = textInput.value; // no longer needed with new event system
 let nameArray = [];
+let imageArray = [];
 
 // main func ================================================================ ||
 function typeName(){
@@ -29,13 +30,15 @@ function typeName(){
 
 
 // functions called in typeName() ============================================||
+let imagez = document.querySelector(".imagez");
 
-function getTranslate(){ //TODO
-    return
-    //empty out all images in section
-    nameArray.forEach(matchLetter) // loop through name letters array, for each idex, finds matching letter, get image url
+
+function getTranslate(){ //TODO //if if left or right check
+    console.log("getTranslate called")
+    imagez.innerHTML = "";//empty out all images in section
+    nameArray.forEach(matchLetter) 
     // make image tag with url  //lookup create image element
-    // nameLetterPS = [""];
+    // imageArray = [];
 };
 
 function drawFSimages(){ //TODO
@@ -43,6 +46,11 @@ function drawFSimages(){ //TODO
 };
 
 function matchLetter(Letter){
+    console.log(leftHandLetters[Letter]);
+    let imageURL = leftHandLetters[Letter];
+    var img = document.createElement('img');
+    img.src = imageURL;
+    document.querySelector('.imagez').appendChild(img);
     // loop through name letters array, for each idex, 
     // finds matching letter, 
     // get image url
@@ -89,15 +97,22 @@ function clearName(){
 
 clearButton.addEventListener("click", clearName);
 
+
+
 // Pretend to be a real input box ============================================||
 let inputBox = document.querySelector(".insertTextField");
+let inputActivated = false
 
 function activateInput(){
-    inputBox.style.border = "thick solid #0000FF";
-}
-
-function activateInput(){
-    inputBox.style.border;
+    console.log("Input box clicked")
+    if (!inputActivated){
+        inputActivated = true;
+        inputBox.style.border = "thick solid #e8ba67";
+    } 
+    else if(inputActivated){
+        inputActivated = false;
+        inputBox.style.border = "pink";
+    }
 }
 
 inputBox.addEventListener("click", activateInput);
@@ -120,7 +135,7 @@ function switchToRIGHTHand(){
         buttonL.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
         
         //Switch to left button array // not needed, we'll just check the bool when drawing
-        //Switch current displayed fingerspelling images to left
+        //Switch current displayed fingerspelling images to left TODO
     }
     else {
         console.log("Already set to right hand")
@@ -139,7 +154,7 @@ function switchToLEFTHand(){
         buttonR.style.filter = 'drop-shadow(-1px 2px 0px  #075313)';
         
         //Switch to left button array // not needed, we'll just check the bool when drawing
-        //Switch current displayed fingerspelling images to left
+        //Switch current displayed fingerspelling images to left TODO
     }
     else {
         console.log("Already set to left hand")
@@ -262,6 +277,10 @@ window.onkeyup = function(event) {
         console.log("'Z' key is pressed");
         nameArray.push('Z');
         typeName();
+    } else if ( event.key == ' ' ) {
+        console.log("'Space' key is pressed");
+        nameArray.push(' ');
+        typeName();
     } else if ( event.key === 'Enter' ) {
         console.log("'Enter' key is pressed");
         console.log(nameArray);
@@ -281,59 +300,59 @@ window.onkeydown = function(event) {
 // Storing correct translate files () ============================================||
 
 let rightHandLetters = {
-    "a" : "images/right_a.jpg",
-    "b" : "images/right_b.jpg",
-    "c" : "images/right_c.jpg",
-    "d" : "images/right_d.jpg",
-    "e" : "images/right_e.jpg",
-    "f" : "images/right_f.jpg",
-    "g" : "images/right_g.jpg",
-    "h" : "images/right_h.jpg",
-    "i" : "images/right_i.jpg",
-    "j" : "images/right_j.jpg",
-    "k" : "images/right_k.jpg",
-    "l" : "images/right_l.jpg",
-    "m" : "images/right_m.jpg",
-    "n" : "images/right_n.jpg",
-    "o" : "images/right_o.jpg",
-    "p" : "images/right_p.jpg",
-    "q" : "images/right_q.jpg",
-    "r" : "images/right_r.jpg",
-    "s" : "images/right_s.jpg",
-    "t" : "images/right_t.jpg",
-    "u" : "images/right_u.jpg",
-    "v" : "images/right_v.jpg",
-    "w" : "images/right_w.jpg",
-    "x" : "images/right_x.jpg",
-    "y" : "images/right_y.jpg",
-    "z" : "images/right_z.jpg",
+    "A" : "images/right_a.jpg",
+    "B" : "images/right_b.jpg",
+    "C" : "images/right_c.jpg",
+    "D" : "images/right_d.jpg",
+    "E" : "images/right_e.jpg",
+    "F" : "images/right_f.jpg",
+    "G" : "images/right_g.jpg",
+    "H" : "images/right_h.jpg",
+    "I" : "images/right_i.jpg",
+    "J" : "images/right_j.jpg",
+    "K" : "images/right_k.jpg",
+    "L" : "images/right_l.jpg",
+    "M" : "images/right_m.jpg",
+    "N" : "images/right_n.jpg",
+    "O" : "images/right_o.jpg",
+    "P" : "images/right_p.jpg",
+    "Q" : "images/right_q.jpg",
+    "R" : "images/right_r.jpg",
+    "S" : "images/right_s.jpg",
+    "T" : "images/right_t.jpg",
+    "U" : "images/right_u.jpg",
+    "V" : "images/right_v.jpg",
+    "W" : "images/right_w.jpg",
+    "X" : "images/right_x.jpg",
+    "Y" : "images/right_y.jpg",
+    "Z" : "images/right_z.jpg",
 }
 
 let leftHandLetters = {
-    "a" : "images/left_a.jpg",
-    "b" : "images/left_b.jpg",
-    "c" : "images/left_c.jpg",
-    "d" : "images/left_d.jpg",
-    "e" : "images/left_e.jpg",
-    "f" : "images/left_f.jpg",
-    "g" : "images/left_g.jpg",
-    "h" : "images/left_h.jpg",
-    "i" : "images/left_i.jpg",
-    "j" : "images/left_j.jpg",
-    "k" : "images/left_k.jpg",
-    "l" : "images/left_l.jpg",
-    "m" : "images/left_m.jpg",
-    "n" : "images/left_n.jpg",
-    "o" : "images/left_o.jpg",
-    "p" : "images/left_p.jpg",
-    "q" : "images/left_q.jpg",
-    "r" : "images/left_r.jpg",
-    "s" : "images/left_s.jpg",
-    "t" : "images/left_t.jpg",
-    "u" : "images/left_u.jpg",
-    "v" : "images/left_v.jpg",
-    "w" : "images/left_w.jpg",
-    "x" : "images/left_x.jpg",
-    "y" : "images/left_y.jpg",
-    "z" : "images/left_z.jpg",
+    "A" : "images/left_a.jpg",
+    "B" : "images/left_b.jpg",
+    "C" : "images/left_c.jpg",
+    "D" : "images/left_d.jpg",
+    "E" : "images/left_e.jpg",
+    "F" : "images/left_f.jpg",
+    "G" : "images/left_g.jpg",
+    "H" : "images/left_h.jpg",
+    "I" : "images/left_i.jpg",
+    "J" : "images/left_j.jpg",
+    "K" : "images/left_k.jpg",
+    "L" : "images/left_l.jpg",
+    "M" : "images/left_m.jpg",
+    "N" : "images/left_n.jpg",
+    "O" : "images/left_o.jpg",
+    "P" : "images/left_p.jpg",
+    "Q" : "images/left_q.jpg",
+    "R" : "images/left_r.jpg",
+    "S" : "images/left_s.jpg",
+    "T" : "images/left_t.jpg",
+    "U" : "images/left_u.jpg",
+    "V" : "images/left_v.jpg",
+    "W" : "images/left_w.jpg",
+    "X" : "images/left_x.jpg",
+    "Y" : "images/left_y.jpg",
+    "Z" : "images/left_z.jpg",
 }
