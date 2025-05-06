@@ -151,7 +151,7 @@ header
     margin-top: -200px;
 }
 .insertTextField{
-    background-color: pink;
+    background-color: rgb(237, 238, 232);
      height: 30px; 
     width: 50%; 
     padding: 12px 20px;
@@ -159,7 +159,9 @@ header
     font-family: Arial, Helvetica, sans-serif;
     float: left;
 }
-
+.typingArea{
+    width: 50%;
+}
 button
 {
     border:none;
@@ -214,8 +216,9 @@ button
     margin-top: 50px;
     margin-left: 20px;
     width: 25%;
+    float:left;
 }
-.clear{
+/.clear{
     float: ;
 
 }
