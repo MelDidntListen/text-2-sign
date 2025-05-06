@@ -89,6 +89,19 @@ function clearName(){
 
 clearButton.addEventListener("click", clearName);
 
+// Pretend to be a real input box ============================================||
+let inputBox = document.querySelector(".insertTextField");
+
+function activateInput(){
+    inputBox.style.border = "thick solid #0000FF";
+}
+
+function activateInput(){
+    inputBox.style.border;
+}
+
+inputBox.addEventListener("click", activateInput);
+
 
 
 // Switch left and right () ============================================||
@@ -249,16 +262,20 @@ window.onkeyup = function(event) {
         console.log("'Z' key is pressed");
         nameArray.push('Z');
         typeName();
-    } else if ( event.key === 'Delete' || event.inputType === "deleteContentBackward" || event.key === 'Backspace') {
-        console.log("'Delete' key is pressed");
-        nameArray.pop();
-        typeName();
     } else if ( event.key === 'Enter' ) {
         console.log("'Enter' key is pressed");
         console.log(nameArray);
         saveEnter;
     } 
     getTranslate();
+}
+
+window.onkeydown = function(event) {
+    if ( event.key === 'Delete' || event.inputType === "deleteContentBackward" || event.key === 'Backspace') {
+        console.log("'Delete' key is pressed");
+        nameArray.pop();
+        typeName();
+    }
 }
 
 // Storing correct translate files () ============================================||
