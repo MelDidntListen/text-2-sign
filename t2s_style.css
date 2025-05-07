@@ -132,7 +132,8 @@ header
 
 .row3 h3
 {
-    margin-left:10%;
+    margin-left:10px;
+    margin-bottom: 30px;
 }
 
 
@@ -233,7 +234,10 @@ button
 }
 .imagez{
     width: 100%;
-
+    height: 210px;
+    background-color: #fffef6;
+    border-radius: 20px;
+    
 }
 .imagez img{
     size-adjust: 15%;
