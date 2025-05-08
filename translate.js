@@ -15,22 +15,20 @@ let imageArray = [];
 function typeName(){
     let joinedName = nameArray.join("");
     textInput.innerText = joinedName;
-    //getTranslate() // get translation finger spelling image to match //TODO
-    //drawFSimages(); // draw images //TODO
-    
-    //tester of current values
     console.log(nameArray); // Output: ["H", "e", "l", "l", "o"]
 };
-//function is called by window.onkeyup down below
+//no longer needed vv
+        //function is called by window.onkeyup down below
 
-// below listener only calls TypeName() when enter is pressed to submit the current input.
-//   this won't work as we need to call this function as soon as any key is pressed
-//      vvvv
-// textInput.addEventListener("change", typeName);
+        // below listener only calls TypeName() when enter is pressed to submit the current input.
+        //   this won't work as we need to call this function as soon as any key is pressed
+        //      vvvv
+        // textInput.addEventListener("change", typeName);
 
 
 // functions called in typeName() ============================================||
 let imagez = document.querySelector(".imagez");
+let storedImages = [];
 
 function getTranslate(){  
     console.log("getTranslate called");
@@ -39,45 +37,47 @@ function getTranslate(){
     // imageArray = [];
 };
 
-function matchLetter(Letter){
-    if(isRight){ //if if left or right check
+function matchLetter(Letter) {
+    let imageURL;
+    if (isRight) { // Check if right hand
         console.log(rightHandLetters[Letter]);
-        let imageURL = rightHandLetters[Letter];
-        var img = document.createElement('img');
-        img.src = imageURL;
-        document.querySelector('.imagez').appendChild(img);
-    }
-    else{ //if left
+        imageURL = rightHandLetters[Letter];
+    } else { // If left hand
         console.log(leftHandLetters[Letter]);
-        let imageURL = leftHandLetters[Letter];// get image url // finds matching letter, 
-        var img = document.createElement('img');
-        img.src = imageURL;
-        document.querySelector('.imagez').appendChild(img); //draw
+        imageURL = leftHandLetters[Letter];
     }
+    // Create the image element
+    let img = document.createElement('img');
+    img.src = imageURL;
+    // Display image in HTML
+    document.querySelector('.imagez').appendChild(img);
+    
+    // Store the image reference in the array
+    storedImages.push(imageURL);
 }
 
 
 // functions called in saveEnter() ============================================||
 let submitButton = document.querySelector(".submit");
+let saveDiv = document.querySelector(".");
 
+// A good check if we were using an input bar, but because we are tracking keyups, this isn't needed
 const isAlphabet = (input) => {
     const re = /^[a-zA-Z\s]+$/;
     return re.test(input);
 }
 
 function saveEnter(){
-    console.log(currentName);
-    if (isAlphabet(input.value)){
-        //Current input text
+    console.log(nameArray);
+    if (nameArray.length === 0){ // checks that there is a name to save, not empty
+          console.log("Could not save name as there is nothing typed at the moment.");
+    } else {
+        storedImages.forEach(img => console.log(img.src));
+        //imagez.innerHTML = "";
+        clearName();
         //Current fingerspelling images
         //Add current to array
-        //Display saved word below
-        return     
-    }
-    else {
-        console.log("Current name needs to be text, cannot be saved")
-        //(display message saying to type first?) modal. Display block, pass time then display none
-        return
+        //Display saved word below  
     }
 }
 
@@ -90,8 +90,10 @@ submitButton.addEventListener("click", saveEnter);
 let clearButton = document.querySelector(".clear");
 
 function clearName(){
+    console.log("Name cleared");
     nameArray = [];
-	//Clear current fingerspelling images   foreach !!!
+	imagez.innerHTML = ""; // Remove all images from the HTML
+    storedImages = []; // Clear the array
 }
 
 clearButton.addEventListener("click", clearName);
@@ -132,8 +134,8 @@ function switchToRIGHTHand(){
         buttonR.style.marginLeft = '10px, 11px, 0px, 9px';
         buttonL.style.backgroundColor = '#8ADB6B';
         buttonL.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
-        //Switch to left button array // not needed, we'll just check the bool when drawing
-            //Switch current displayed fingerspelling images to left TODO
+        getTranslate() //Switch to left button array // not needed, we'll just check the bool when drawing
+        typeName();    //Switch current displayed fingerspelling images to left TODO
     }
     else {
         console.log("Already set to right hand")
@@ -150,9 +152,8 @@ function switchToLEFTHand(){
         buttonR.style.backgroundColor = '#74C1DC';
         buttonR.style.backgroundColor.hover = '#74C1DC';
         buttonR.style.filter = 'drop-shadow(-1px 2px 0px  #075313)';
-        
-        //Switch to left button array // not needed, we'll just check the bool when drawing
-        //Switch current displayed fingerspelling images to left TODO
+        getTranslate() //Switch to left button array // not needed, we'll just check the bool when drawing
+        typeName(); //Switch current displayed fingerspelling images to left TODO
     }
     else {
         console.log("Already set to left hand")
@@ -175,26 +176,32 @@ window.onkeyup = function(event) {
         console.log("'A' key is pressed");
         nameArray.push('A');
         typeName();
+        getTranslate();
     } else if ( key == 'B' ) {
         console.log("'B' key is pressed");
         nameArray.push('B');
         typeName();
+        getTranslate();
     } else if ( key == 'C' ) {
         console.log("'C' key is pressed");
         nameArray.push('C');
         typeName();
+        getTranslate();
     } else if ( key == 'D' ) {
         console.log("'D' key is pressed");
         nameArray.push('D');
         typeName();
+        getTranslate();
     } else if ( key == 'E' ) {
         console.log("'E' key is pressed");
         nameArray.push('E');
         typeName();
+        getTranslate();
     } else if ( key == 'F' ) {
         console.log("'F' key is pressed");
         nameArray.push('F');
         typeName();
+        getTranslate();
     } else if ( key == 'G' ) {
         console.log("'G' key is pressed");
         nameArray.push('G');
@@ -203,95 +210,115 @@ window.onkeyup = function(event) {
         console.log("'H' key is pressed");
         nameArray.push('H');
         typeName();
+        getTranslate();
     } else if ( key == 'I' ) {
         console.log("'I' key is pressed");
         nameArray.push('I');
         typeName();
+        getTranslate();
     } else if ( key == 'J' ) {
         console.log("'J' key is pressed");
         nameArray.push('J');
         typeName();
+        getTranslate();
     } else if ( key == 'K' ) {
         console.log("'K' key is pressed");
         nameArray.push('K');
         typeName();
+        getTranslate();
     } else if ( key == 'L' ) {
         console.log("'L' key is pressed");
         nameArray.push('L');
         typeName();
+        getTranslate();
     } else if ( key == 'M' ) {
         console.log("'M' key is pressed");
         nameArray.push('M');
         typeName();
+        getTranslate();
     } else if ( key == 'N' ) {
         console.log("'N' key is pressed");
         nameArray.push('N');
         typeName();
+        getTranslate();
     } else if ( key == 'O' ) {
         console.log("'O' key is pressed");
         nameArray.push('O');
         typeName();
+        getTranslate();
     } else if ( key == 'P' ) {
         console.log("'P' key is pressed");
         nameArray.push('P');
         typeName();
+        getTranslate();
     } else if ( key == 'Q' ) {
         console.log("'Q' key is pressed");
         nameArray.push('Q');
         typeName();
+        getTranslate();
     } else if ( key == 'R' ) {
         console.log("'R' key is pressed");
         nameArray.push('R');
         typeName();
+        getTranslate();
     } else if ( key == 'S' ) {
         console.log("'S' key is pressed");
         nameArray.push('S');
         typeName();
+        getTranslate();
     } else if ( key == 'T' ) {
         console.log("'T' key is pressed");
         nameArray.push('T');
         typeName();
+        getTranslate();
     } else if ( key == 'U' ) {
         console.log("'U' key is pressed");
         nameArray.push('U');
         typeName();
+        getTranslate();
     } else if ( key == 'V' ) {
         console.log("'V' key is pressed");
         nameArray.push('V');
         typeName();
+        getTranslate();
     } else if ( key == 'W' ) {
         console.log("'W' key is pressed");
         nameArray.push('W');
         typeName();
+        getTranslate();
     } else if ( key == 'X' ) {
         console.log("'X' key is pressed");
         nameArray.push('X');
         typeName();
+        getTranslate();
     } else if ( key == 'Y' ) {
         console.log("'Y' key is pressed");
         nameArray.push('Y');
         typeName();
+        getTranslate();
     } else if ( key == 'Z' ) {
         console.log("'Z' key is pressed");
         nameArray.push('Z');
         typeName();
+        getTranslate();
     } else if ( event.key == ' ' ) {
         console.log("'Space' key is pressed");
         nameArray.push(' ');
         typeName();
+        getTranslate();
     } else if ( event.key === 'Enter' ) {
         console.log("'Enter' key is pressed");
         console.log(nameArray);
-        saveEnter;
+        saveEnter();
     } 
-    getTranslate();
 }
 
 window.onkeydown = function(event) {
-    if ( event.key === 'Delete' || event.inputType === "deleteContentBackward" || event.key === 'Backspace') {
+    if ( event.key === 'Delete' || event.key === 'Backspace') {
         console.log("'Delete' key is pressed");
         nameArray.pop();
         typeName();
+        getTranslate();
     }
 }
 
