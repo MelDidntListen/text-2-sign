@@ -326,6 +326,7 @@ let rightHandLetters = {
     "X" : "images/right_x.jpg",
     "Y" : "images/right_y.jpg",
     "Z" : "images/right_z.jpg",
+    " " : "images/Space.jpg"
 }
 
 let leftHandLetters = {
@@ -355,4 +356,5 @@ let leftHandLetters = {
     "X" : "images/left_x.jpg",
     "Y" : "images/left_y.jpg",
     "Z" : "images/left_z.jpg",
+     " " : "images/Space.jpg"
 }
