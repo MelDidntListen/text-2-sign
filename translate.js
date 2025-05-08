@@ -32,29 +32,28 @@ function typeName(){
 // functions called in typeName() ============================================||
 let imagez = document.querySelector(".imagez");
 
-
-function getTranslate(){ //TODO //if if left or right check
-    console.log("getTranslate called")
-    imagez.innerHTML = "";//empty out all images in section
-    nameArray.forEach(matchLetter) 
-    // make image tag with url  //lookup create image element
+function getTranslate(){  
+    console.log("getTranslate called");
+    imagez.innerHTML = ""; //empty out all images in section
+    nameArray.forEach(matchLetter) // make image tag with url // loop through name letters array, for each index, 
     // imageArray = [];
 };
 
-function drawFSimages(){ //TODO
-    return;
-};
-
 function matchLetter(Letter){
-    console.log(leftHandLetters[Letter]);
-    let imageURL = leftHandLetters[Letter];
-    var img = document.createElement('img');
-    img.src = imageURL;
-    document.querySelector('.imagez').appendChild(img);
-    // loop through name letters array, for each idex, 
-    // finds matching letter, 
-    // get image url
-    //draw
+    if(isRight){ //if if left or right check
+        console.log(rightHandLetters[Letter]);
+        let imageURL = rightHandLetters[Letter];
+        var img = document.createElement('img');
+        img.src = imageURL;
+        document.querySelector('.imagez').appendChild(img);
+    }
+    else{ //if left
+        console.log(leftHandLetters[Letter]);
+        let imageURL = leftHandLetters[Letter];// get image url // finds matching letter, 
+        var img = document.createElement('img');
+        img.src = imageURL;
+        document.querySelector('.imagez').appendChild(img); //draw
+    }
 }
 
 
@@ -133,9 +132,8 @@ function switchToRIGHTHand(){
         buttonR.style.marginLeft = '10px, 11px, 0px, 9px';
         buttonL.style.backgroundColor = '#8ADB6B';
         buttonL.style.filter = 'drop-shadow(-1px 2px 0px #075313)';
-        
         //Switch to left button array // not needed, we'll just check the bool when drawing
-        //Switch current displayed fingerspelling images to left TODO
+            //Switch current displayed fingerspelling images to left TODO
     }
     else {
         console.log("Already set to right hand")
