@@ -173,7 +173,8 @@ margin-right:auto;
     margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
-    border-radius: 8px
+    border-radius: 8px;
+    border: thick solid #ffffff;
 }
 .typingArea{
     width: 50%;
