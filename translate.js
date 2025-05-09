@@ -33,6 +33,7 @@ let storedImages = [];
 function getTranslate(){  
     console.log("getTranslate called");
     imagez.innerHTML = ""; //empty out all images in section
+    storedImages = [];
     nameArray.forEach(matchLetter) // make image tag with url // loop through name letters array, for each index, 
     // imageArray = [];
 };
@@ -59,7 +60,8 @@ function matchLetter(Letter) {
 
 // functions called in saveEnter() ============================================||
 let submitButton = document.querySelector(".submit");
-let saveDiv = document.querySelector(".");
+let saveDiv = document.querySelector(".row5");
+let savedNamesArray = [];
 
 // A good check if we were using an input bar, but because we are tracking keyups, this isn't needed
 const isAlphabet = (input) => {
@@ -71,10 +73,41 @@ function saveEnter(){
     console.log(nameArray);
     if (nameArray.length === 0){ // checks that there is a name to save, not empty
           console.log("Could not save name as there is nothing typed at the moment.");
+        return;
     } else {
-        storedImages.forEach(img => console.log(img.src));
-        //imagez.innerHTML = "";
+        // storedImages.forEach(img => console.log(img.src));
+        //Saves current name to array
+        const saveName = nameArray.join("");
+        savedNamesArray.push(saveName);
+        
+        // Creates a container for the saved name and images
+        const saveContainer = document.createElement("div");
+        saveContainer.classList.add("saved-entry");
+
+        //prints current name TEXT in HTML saveDiv (.row5)
+        const nameElement = document.createElement("h3");
+        nameElement.textContent = saveName;
+        saveDiv.appendChild(nameElement);
+
+        //prints current name IMAGES in HTML saveDiv (.row5)
+        const imagesContainer = document.createElement("div");
+        imagesContainer.classList.add("saved-images");
+        storedImages.forEach(imageURL => {
+            const img = document.createElement("img");
+            img.src = imageURL;
+            img.alt = "Sign image for " + saveName;
+            imagesContainer.appendChild(img);
+        });
+        saveContainer.appendChild(imagesContainer);
+
+        // Append the container to the saveDiv
+        saveDiv.appendChild(saveContainer);
+        
+        // Clear the current name and images to allow for new learning!
         clearName();
+        typeName();
+        storedImages = [];
+
         //Current fingerspelling images
         //Add current to array
         //Display saved word below  
@@ -206,6 +239,7 @@ window.onkeyup = function(event) {
         console.log("'G' key is pressed");
         nameArray.push('G');
         typeName();
+        getTranslate();
     } else if ( key == 'H' ) {
         console.log("'H' key is pressed");
         nameArray.push('H');
