@@ -287,6 +287,8 @@ button
 .imagez img{
     width: 7%;
     size-adjust: 10%;
+    aspect-ratio: 1 / 1; 
+    height: auto;
 }
 /*----------ABOUT! ------------------------------------------------------------*/
 
