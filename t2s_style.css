@@ -56,10 +56,20 @@ h3
     font-style: normal;
     color: #46A4C4;
     line-height: normal;
-    font-size: large;
+    font-size: 26px;
 }
 
 p
+{
+    font-family: "ADLaM Display", serif, Arial, Helvetica, sans-serif;
+    font-weight: 40;
+    font-style: normal;
+    color: #46A4C4;
+    line-height: normal;
+    font-size: 18px;
+}
+
+.typingArea
 {
     font-family: "ADLaM Display", serif, Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -126,24 +136,43 @@ header
     display:block;
     margin-left:auto;
     margin-right:auto;
-    width:50%;
+    width:fit-content;
     clear: both;
+    
 }
 
 .row3 h3
 {
-    margin-left:10px;
     margin-bottom: 30px;
+    width:fit-content;
+}
+.row5{
+    margin-left:8.5%;
 }
 .row5 h1{
-    margin-left:10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width:75%;
     clear:both;
-   margin-top:40px;
-display:block;
-margin-left:auto;
-margin-right:auto;
+    margin-top:40px;
+    
+}
+
+.row5 h3{
+    font-size: 40px;
+}
+
+.row5 img{
+    width:100px;
+    margin-bottom: 20px;
+}
+
+hr{
+    background-color:#FABF52;
+    height: 5px;
+    border:none;
+    width: 89%;
+    margin-left:0%;
+    margin-bottom: 30px;
 }
 
 
@@ -160,17 +189,20 @@ margin-right:auto;
 .center
 {
     display:block;
-    width:700px;
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: -200px;
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.game{
+    width: 100%;
+    clear:both;
 }
 .insertTextField{
     background-color: #ffffff;
-     height: 100px; 
-    width: 50%; 
-    padding: 12px 20px;
-    margin-top: 20px;
+    height: 130px; 
+    width: 77%;
+    margin-top: 12px;
+    margin-left: 0%;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
     border-radius: 8px;
@@ -187,6 +219,7 @@ button
     padding-left: 20px;
     padding-right: 20px;
     font-size:30px;
+    width: 116px;
     font-family: "ADLaM Display", serif, Arial, Helvetica, sans-serif;
     margin: 10px;
     border-radius: 14px;
@@ -196,9 +229,9 @@ button
 
 .LRTriggerButtons
 {
-    width: 50px;
-    margin-left:70px;
-    margin-right: 50px;
+    width: 10%;
+    margin-left:0%;
+    margin-right: 0%;
     float: left; 
 }
 
@@ -211,49 +244,44 @@ button
     margin-right: 11px;
 }
 
-.buttonL
-{
+.buttonL{
     background-color: #8ADB6B;
 }
-.buttonL button:hover
-{
+.buttonL button:hover{
     background-color: #8ADB6B;
 }
-.buttonR
-{
+.buttonR{
     background-color: #74C1DC;
 }
 
-.buttonR button:hover
-{
+.buttonR button:hover{
     background-color: #6fb3cc;
 }
-.enterAndClear
-{
-    margin-top: 50px;
-    margin-left: 20px;
-    width: 25%;
+.enterAndClear{
+    margin-top: 0px;
+    margin-left: 1%;
+    width: 10%;
     float: left;
 }
-.submit{
-    float:left;
-
-}
-.clear{
-    float:left;
-
-}
+.enterAndClear button:hover{
+    background-color: #85d067;
+    filter: drop-shadow(0px 0px 0px #075313);
+    margin-left: 9px;
+    margin-top: 10px;
+    margin-right: 11px;
+} 
 .imagez{
     width: 100%;
+    height: 200px;
     height: fit-content;
     background-color: #ffffff;
     border-radius: 20px;
-    
 }
 .imagez img{
-    size-adjust: 15%;
+    width: 7%;
+    size-adjust: 10%;
 }
-/*----------ABOUT! ----------*/
+/*----------ABOUT! ------------------------------------------------------------*/
 
 .aboutHead
 {
