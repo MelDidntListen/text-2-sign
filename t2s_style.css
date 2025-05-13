@@ -163,6 +163,7 @@ header
 
 .row5 img{
     width:100px;
+    height:100px;
     margin-bottom: 20px;
 }
 
@@ -173,6 +174,12 @@ hr{
     width: 89%;
     margin-left:0%;
     margin-bottom: 30px;
+}
+
+.yellowHR
+{
+    background-color: #FAEA4B;
+    margin-bottom: -8px;
 }
 
 
@@ -200,9 +207,9 @@ hr{
 .insertTextField{
     background-color: #ffffff;
     height: 130px; 
-    width: 77%;
+    width: 74%;
     margin-top: 12px;
-    margin-left: 0%;
+    margin-left: 2%;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
     border-radius: 8px;
